@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.sign_in {
+  margin: auto;
+  width: 25%;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  /* display: flex;
+  justify-content:space-around;
+  align-items: center; */
+  /* flex-wrap: wrap;  */
+  border-radius:3px ;
+
+}
+.sign_in .sign_in_txt{
+margin-top: 1rem !important;
+margin-bottom: 1rem !important;
+font-weight: bold;
+font-size: 700;
+}
+.sign_in > * {
+  /* margin: auto; */
+  width: 100%   ;
+  /* margin: .5rem; */
+  margin-top:.3rem ;
+  display: block;
+  /* text-align: center; */
+  border-radius:3px ;
+  /* border: none; */
+}
+
+header h1 {
+    margin: 2rem;
+  text-align: center;
+  color: rgb(65, 65, 255);
+
+}
+header h1 span{
+
+  color: #f557e0;
+
+}
+input{
+    border: 1px solid #0c0c0c;
+    padding: .2rem;
+
+}
+
+.btn{
+    background-color: #f4d382;
+    cursor: pointer;
+
+}
+.btn:hover{
+    background-color: #f5c857;
+
+}
+.sign_in .new_acc{
+font-size: small;
+font-weight: 100;
+text-align: center;
+margin-top: 1rem;
+margin-bottom: 1rem;
+}
+/* .sign_in .new_acc::after{
+    position: absolute;
+    content: "";
+    height: 1.5px;
+    background-color: #242424;
+    width: 3rem;
+    /* top: 90%;
+    left: 2.5%; 
+} */
+/* .sign_in .new_acc::after {
+    content: " <- EXCITING!";
+    color: green;
+  } */
+
+.error{
+    color: red;
+    text-align: center;
+    margin-top:3rem ;
+}
+
+.success{
+    text-align: center;
+    margin-top:3rem ;
+}
+
+
+.password_block{
+    display: block;
+}
+.password_none{
+    display: none !important;
+}
+
+
+
+
+@media only screen and (max-width: 1295px) {    .sign_in {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 608px) {    .sign_in {
+    width: 70%;
+}
+}
+@media only screen and (max-width: 400px) {    .sign_in {
+    width: 90%;
+}
+}
