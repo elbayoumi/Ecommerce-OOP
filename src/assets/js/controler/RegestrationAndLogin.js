@@ -42,7 +42,11 @@ export default class RegestrationAndLogin {
     static regestrationAndLogin() {
         this.confirmCreate.addEventListener("click", () => {
             // console.log(localStorage.getItem("regestratio"))
-            if (localStorage.getItem("regestration") == null) {
+            if((this.email_confirmation.value=='')&&(this.password_confirmation.value=='')){
+                this.error.innerHTML = `fill in both email and password`
+
+            }
+            else if ((localStorage.getItem("regestration") == null)) {
                 const info = {
                     email: [this.email_confirmation.value],
                     password: [this.password_confirmation.value]
