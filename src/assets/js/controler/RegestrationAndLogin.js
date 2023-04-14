@@ -64,11 +64,11 @@ export default class RegestrationAndLogin {
                     this.styleSuccess();
                     this.backLogin();
                 }
-                else if ((storge.email.indexOf(this.email_confirmation.value) > -1) && (storge.password.indexOf(this.password_confirmation.value) > -1)) {
+                else if ((storge.email.includes(this.email_confirmation.value)) && (storge.password.includes(this.password_confirmation.value))) {
                     this.error.innerHTML = `this email and password is already exists`
 
                 }
-                else if (storge.email.indexOf(this.email_confirmation.value) > -1) {
+                else if (storge.email.includes(this.email_confirmation.value)) {
                     this.error.innerHTML = `this email  is already exists`
                 } else if (storge.password.indexOf(this.password_confirmation.value) > -1) {
                     this.error.innerHTML = `this password  is already exists`
