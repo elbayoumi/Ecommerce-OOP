@@ -8,10 +8,18 @@ export default class CheckLogin{
     static checkPassword(){
         let storge = JSON.parse(localStorage.getItem("regestration"));
         if(storge.password.includes(this.pass.value)&&(storge.email.indexOf(this.email_or_mobile.value)==storge.password.indexOf(this.pass.value))){
+            localStorage.removeItem("user");
+            localStorage.setItem("user",JSON.stringify( {
+                username:this.email_or_mobile.value,
+                id:storge.email.indexOf(this.email_or_mobile.value)
+            }));
             return true;
 
 
-    }else return false;
+    }else{
+        localStorage.removeItem("user");
+        return false;
+    } 
     
 }
 }
