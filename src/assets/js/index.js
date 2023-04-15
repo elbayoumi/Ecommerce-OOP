@@ -3,7 +3,11 @@ import Current from './controler/Current.js';
 import CheckLogin from './controler/CheckLogin.js';
 import FetchApi from './view/FetchApi.js';
 const signOut = document.querySelector(".signOut")
-
+window.addEventListener("load", (event) => {
+    console.log("page is fully loaded");
+    FetchApi.fechApi()
+  });
+  
 // HoldElement.allPassword.forEach((prop)=>{
 //     // prop.classList.add="password_none"
 //     prop.style.display="none";
@@ -14,7 +18,6 @@ const signOut = document.querySelector(".signOut")
    
 //   });
   
- FetchApi.fechApi()
 Current.current();
 HoldElement.clickOnContinue();
 
@@ -28,6 +31,7 @@ document.body.addEventListener("click", () => {
 
 signOut.addEventListener("click", () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("pagenation");
    Current.welcome_page.style.display = "block";
     localStorage.removeItem('current');
     Current.productesPage.style.display = "none";

@@ -19,6 +19,8 @@ export default class CheckLogin{
 
     }else{
         localStorage.removeItem("user");
+        localStorage.removeItem("pagenation");
+
         return false;
     } 
     

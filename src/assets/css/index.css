@@ -112,7 +112,7 @@ nav {
 body {
   background-color: rgb(240, 242, 245);
 }
-.card {
+.card,.elementcenter {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -162,6 +162,17 @@ body {
   width: 70%;
   margin: auto;
 }
+.seemore{
+  /* text-align: center; */
+  margin: 1rem;
+cursor: pointer !important;
+}
+
+
+
+
+
+
 
 @media only screen and (max-width: 1295px) {
   .sign_in {

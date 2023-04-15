@@ -1,8 +1,9 @@
 export default class FechApi{
     static card =document.querySelector(".card")
-
+    static seemore = document.querySelector(".seemore")
+    
     static fechApi(){
-        fetch('https://fakestoreapi.com/products')
+        fetch(`https://fakestoreapi.com/products?limit=${localStorage.getItem("pagenation")||5}`)
             .then(res=>res.json())
             .then(json=>{
                 // card.innerHTML+=json. 
@@ -13,8 +14,16 @@ export default class FechApi{
                    <input type="button" value="${element.title}" name="lastddddddddddname" class="card_text">
                     </div>`
                 });
-                console.log(json[0])
+                console.log(json.length)
                 // this.card.emit("helo")
+                localStorage.setItem("pagenation",json.length);
+                this.seemore.addEventListener("click",()=>{
+                    let count=localStorage.getItem("pagenation");
+                    localStorage.removeItem("pagenation");
+                    localStorage.setItem("pagenation",Number(count)+5)
+                    location.reload();
+                    
+                })
             })
             
     }
