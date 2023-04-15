@@ -77,9 +77,9 @@ export default class RegestrationAndLogin {
 
 
             }
-            setTimeout(() => {
-                this.error.innerHTML = ""
-            }, 1500)
+            // setTimeout(() => {
+            //     this.error.innerHTML = ""
+            // }, 1500)
 
         })
         // this.regestration.style.display = "none";

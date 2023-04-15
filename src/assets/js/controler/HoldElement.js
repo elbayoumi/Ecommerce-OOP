@@ -13,8 +13,24 @@ class HoldElement {
     static create = RegestrationAndLogin.create;
     static login = RegestrationAndLogin.login;
     static error = RegestrationAndLogin.error;
-    static success =RegestrationAndLogin.success;
+    static success = RegestrationAndLogin.success;
+    static productesPage = document.querySelector('.productesPage');
+    static welcome_page = document.querySelector(".welcome_page");
+    static welcome = document.querySelector(".welcome");
 
+    static conditions() {
+        if (CheckLogin.checkPassword()) {
+
+            this.welcome_page.style.display = "none";
+            this.productesPage.style.display = "block";
+            this.welcome.innerHTML = `welcome mr : ${JSON.parse(localStorage.getItem("user")).username}`;
+
+        }
+        else {
+            this.error.innerHTML = `<p>your password not valid plz regstration</p>`
+            // else return false
+        }
+    }
     static checkEmailRegester() {
         if ((this.email_or_mobile.value === "")) {
             this.error.innerHTML = `<p>confirm your email</p>`;
@@ -47,13 +63,13 @@ class HoldElement {
         })
         this.continue_pass.addEventListener("click", () => {
             // console.log(this.password_val.value)
-            CheckLogin.checkPassword() ? false : this.error.innerHTML = `<p>your password not valid plz regstration</p>`
+            this.conditions();
         })
         this.password_val.addEventListener('keypress', (e) => {
             if (e.key === "Enter") {
-                console.log(CheckLogin.checkPassword())
-                CheckLogin.checkPassword() ? false : this.error.innerHTML = `<p>your password not valid plz regstration</p>`
-                // else return false
+                console.log(!localStorage.getItem("user"))
+                this.conditions();
+                
             }
         })
         // console.log(this.error.innerHTML!='')

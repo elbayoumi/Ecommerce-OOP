@@ -13,6 +13,7 @@ export default class CheckLogin{
                 username:this.email_or_mobile.value,
                 id:storge.email.indexOf(this.email_or_mobile.value)
             }));
+
             return true;
 
 

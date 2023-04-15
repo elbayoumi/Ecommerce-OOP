@@ -10,72 +10,106 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./src/assets/img/logo.png">
+    <link rel="icon" type="image/x-icon" href="./src/assets/img/logo.png" />
 
     <link rel="stylesheet" href="./src/assets/css/index.css" />
     <title>BabaPay</title>
   </head>
   <body>
-    <header>
-      <h1>Baba<span>Pay</span></h1>
-    </header>
-    <main class="sign">
-      <form class="sign_in">
-        <p class="sign_in_txt">Sign in</p>
-        <label for="email_or_mobile" class="text email"
-          >Email or mobile phone number</label
-        >
-        <input
-          type="text"
-          id="email_or_mobile"
-          placeholder="Email or mobile phone number"
-          class="email_or_mobile email"
-        />
-        <input type="button" value="Continue" class="continue_email email btn" />
-        <label for="password" style="display: none;" class="password">Password</label>
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          style="display: none;" class="password " 
-        />
-        <input type="button" value="Continue" style="display: none;" class="continue_pass password btn" />
-        <label for="save_pass" style="display: none;" class="checkbox password"
-          >Save User and Password</label
-        >
-        <input type="checkbox" id="save_pass" style="display: none;" checked class="checkbox password" />
-        <p class="new_acc">New to BabaPay?</p>
-        <input type="button" value="Create your BabaPay account" class="create"/>
-        <input type="button" style="display: none;" value="Back to login"  class=" password">
-
-      </form>
-    </main>
-    <div class="regestration" style="display: none;" >
+    <div class="welcome_page">
+      <header>
+        <h1>Baba<span>Pay</span></h1>
+      </header>
+      <main class="sign">
         <form class="sign_in">
-            <p class="sign_in_txt">regestration</p>
-            <label for="email_or_mobile" class="text"
-              >Email or mobile phone number</label
-            >
-            <input
-              type="text"
-              placeholder="Email or mobile phone number"
-              class="email_confirmation"
-            />
-            <label for="password" >Password</label>
-            <input
-              type="password"
-              placeholder="password"
-               class="password_confirmation"
-            />
-            <input type="button" value="Create" class="confirmCreate btn"  />
-            <input type="button" value="login">
-          </form>
+          <p class="sign_in_txt">Sign in</p>
+          <label for="email_or_mobile" class="text email"
+            >Email or mobile phone number</label
+          >
+          <input
+            type="text"
+            id="email_or_mobile"
+            placeholder="Email or mobile phone number"
+            class="email_or_mobile email"
+          />
+          <input
+            type="button"
+            value="Continue"
+            class="continue_email email btn"
+          />
+          <label for="password" style="display: none" class="password"
+            >Password</label
+          >
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            style="display: none"
+            class="password"
+          />
+          <input
+            type="button"
+            value="Continue"
+            style="display: none"
+            class="continue_pass password btn"
+          />
+          <label for="save_pass" style="display: none" class="checkbox password"
+            >Save User and Password</label
+          >
+          <input
+            type="checkbox"
+            id="save_pass"
+            style="display: none"
+            checked
+            class="checkbox password"
+          />
+          <p class="new_acc">New to BabaPay?</p>
+          <input
+            type="button"
+            value="Create your BabaPay account"
+            class="create"
+          />
+          <input
+            type="button"
+            style="display: none"
+            value="Back to login"
+            class="password"
+          />
+        </form>
+      </main>
+      <div class="regestration" style="display: none">
+        <form class="sign_in">
+          <p class="sign_in_txt">regestration</p>
+          <label for="email_or_mobile" class="text"
+            >Email or mobile phone number</label
+          >
+          <input
+            type="text"
+            placeholder="Email or mobile phone number"
+            class="email_confirmation"
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            placeholder="password"
+            class="password_confirmation"
+          />
+          <input type="button" value="Create" class="confirmCreate btn" />
+          <input type="button" value="login" />
+        </form>
+      </div>
+      <div class="error"></div>
+      <div class="success" class="success"></div>
+
+      <footer></footer>
     </div>
-    <div class="error"></div>
-    <div class="success" class="success"></div>
-
-    <footer></footer>
-
+<div class="productesPage" style="display: none;">
+  <nav>
+    <p class="welcome"></p>
+<input type="button" value="Sign Out" class="signOut btn">
+  </nav>
+<div class="card"></div>
+</div>
     <script type="module" src="./src/assets/js/index.js"></script>
   </body>
 </html>
