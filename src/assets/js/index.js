@@ -9,6 +9,7 @@ window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
     FetchApi.fechApi(localStorage.getItem("pagenation"))
   });
+  localStorage.getItem("pagenation")>=20?seemore.style.display="none":seemore.style.display="block";
   seemore.addEventListener("click",()=>{
     let count=localStorage.getItem("pagenation")||5;
     localStorage.removeItem("pagenation");
