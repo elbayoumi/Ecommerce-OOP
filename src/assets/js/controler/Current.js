@@ -1,4 +1,3 @@
-import FetchApi from '../view/FetchApi.js';
 
 export default class Current {
     static sign = document.querySelector(".sign");
@@ -6,7 +5,6 @@ export default class Current {
     static allPassword = document.querySelectorAll(".password");
     static allEmail = document.querySelectorAll('.email');
     static welcome_page = document.querySelector(".welcome_page");
-    static signOut = document.querySelector(".signOut")
     static welcome = document.querySelector(".welcome");
 
     static productesPage = document.querySelector('.productesPage');
@@ -28,17 +26,12 @@ export default class Current {
                 });
             }
         } else if (localStorage.getItem("user")) {
+
             this.productesPage.style.display = "block";
             this.welcome.innerHTML = `${JSON.parse(localStorage.getItem("user")).username}`;
 
             this.welcome_page.style.display = "none";
-            this.signOut.addEventListener("click", () => {
-                localStorage.removeItem("user");
-                this.welcome_page.style.display = "block";
-                localStorage.removeItem('current');
-                this.productesPage.style.display = "none";
-            });
-            FetchApi.fechApi()
+
         }
 
     }

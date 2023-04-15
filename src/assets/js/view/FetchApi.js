@@ -14,6 +14,8 @@ export default class FechApi{
                     </div>`
                 });
                 console.log(json[0])
+                // this.card.emit("helo")
             })
+            
     }
 }
