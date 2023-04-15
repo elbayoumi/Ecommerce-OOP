@@ -3,11 +3,21 @@ import Current from './controler/Current.js';
 import CheckLogin from './controler/CheckLogin.js';
 import FetchApi from './view/FetchApi.js';
 const signOut = document.querySelector(".signOut")
+const seemore = document.querySelector(".seemore")
+
 window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
-    FetchApi.fechApi()
+    FetchApi.fechApi(localStorage.getItem("pagenation"))
   });
-  
+  seemore.addEventListener("click",()=>{
+    let count=localStorage.getItem("pagenation")||5;
+    localStorage.removeItem("pagenation");
+    localStorage.setItem("pagenation",Number(count)+5)
+    // location.reload();
+    console.log("sssssssss")
+    FetchApi.fechApi(localStorage.getItem("pagenation"))
+
+})
 // HoldElement.allPassword.forEach((prop)=>{
 //     // prop.classList.add="password_none"
 //     prop.style.display="none";
