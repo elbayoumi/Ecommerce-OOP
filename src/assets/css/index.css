@@ -162,7 +162,7 @@ body {
   width: 70%;
   margin: auto;
 }
-.seemore{
+.seemore,.seeless{
   /* text-align: center; */
   margin: 1rem;
 cursor: pointer !important;
