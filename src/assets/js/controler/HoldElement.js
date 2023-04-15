@@ -23,7 +23,7 @@ class HoldElement {
 
             this.welcome_page.style.display = "none";
             this.productesPage.style.display = "block";
-            this.welcome.innerHTML = `welcome mr : ${JSON.parse(localStorage.getItem("user")).username}`;
+            this.welcome.innerHTML = `${JSON.parse(localStorage.getItem("user")).username}`;
 
         }
         else {

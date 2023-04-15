@@ -1,3 +1,5 @@
+import FetchApi from '../view/FetchApi.js';
+
 export default class Current {
     static sign = document.querySelector(".sign");
     static regestration = document.querySelector(".regestration");
@@ -35,7 +37,8 @@ export default class Current {
                 this.welcome_page.style.display = "block";
                 localStorage.removeItem('current');
                 this.productesPage.style.display = "none";
-            })
+            });
+            FetchApi.fechApi()
         }
 
     }
