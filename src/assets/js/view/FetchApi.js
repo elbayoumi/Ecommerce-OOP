@@ -7,6 +7,7 @@ export default class FechApi{
             .then(json=>{
                 // card.innerHTML+=json. 
                 // let jsonn=JSON.parse(json)   
+                this.card.innerHTML=''
                 json.forEach(element => {
                     this.card.innerHTML+=`<div> 
                     <img src=${element.image}>

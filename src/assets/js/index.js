@@ -12,12 +12,12 @@ window.addEventListener("load", (event) => {
   seemore.addEventListener("click",()=>{
     let count=localStorage.getItem("pagenation")||5;
     localStorage.removeItem("pagenation");
-    localStorage.setItem("pagenation",Number(count)+5)
+    localStorage.setItem("pagenation",Number(count)+5);
     // location.reload();
-    console.log("sssssssss")
-    FetchApi.fechApi(localStorage.getItem("pagenation"))
+    // console.log("sssssssss")
+    FetchApi.fechApi(localStorage.getItem("pagenation"));
 
-})
+});
 // HoldElement.allPassword.forEach((prop)=>{
 //     // prop.classList.add="password_none"
 //     prop.style.display="none";
