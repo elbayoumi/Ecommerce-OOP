@@ -34,10 +34,7 @@ class HoldElement {
     static checkEmailRegester() {
         if ((this.email_or_mobile.value === "")) {
             this.error.innerHTML = `<p>confirm your email</p>`;
-        } else if (this.email_or_mobile.value.split("").length <= 3) {
-            this.error.innerHTML = `<p>confirm your lingth email</p>`;
-
-        } else if (!CheckLogin.checkEmail()) {
+         } else if (!CheckLogin.checkEmail()) {
 
             // console.log(!CheckLogin.checkEmail())
             this.error.innerHTML = `<p>your email not valid plz regstration</p>`;

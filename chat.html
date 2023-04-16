@@ -91,7 +91,7 @@
             let socket = io('https://chatapi-elbayoumi.onrender.com');
             // socket.on('connection');
             let chatInput = $('#chatInput');
-            let username = JSON.parse(localStorage.getItem("user")).username||'Anonymous';
+            let username = JSON.parse(localStorage.getItem("user"))?.username||'Anonymous';
 
             chatInput.keypress(
                 function(e) {
