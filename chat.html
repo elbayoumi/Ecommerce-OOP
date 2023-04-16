@@ -98,9 +98,9 @@
 
                 }
             )
-        //    let username = JSON.parse(localStorage.getItem("user")).username||'Anonymous';
+           let username = JSON.parse(localStorage.getItem("user")).username||'Anonymous';
             socket.on('sendChatToClient', (messege) => {
-                $('.chat-conent ul .li').after(`<li> ${messege}</li>`);
+                $('.chat-conent ul .li').after(`<li>${username}: ${messege}</li>`);
                 //   $("#chatInput").on("input",(event)=>{
                 //     $('.type').append('event')
                 //   })
