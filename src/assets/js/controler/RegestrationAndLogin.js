@@ -1,3 +1,4 @@
+import CheckLogin from "./CheckLogin.js";
 export default class RegestrationAndLogin {
     static confirmCreate = document.querySelector(".confirmCreate");
     static email_confirmation = document.querySelector(".email_confirmation");
@@ -11,7 +12,8 @@ export default class RegestrationAndLogin {
     static success = document.querySelector(".success");
     static allPassword = document.querySelectorAll(".password");
     static allEmail = document.querySelectorAll('.email');
-    static backLogin(){
+    static fname= document.querySelector(".fname");
+    static backLogin() {
 
         this.regestration.style.display = "none";
         this.sign.style.display = "block";
@@ -40,25 +42,21 @@ export default class RegestrationAndLogin {
 
     }
     static regestrationAndLogin() {
+
         this.confirmCreate.addEventListener("click", () => {
             // console.log(localStorage.getItem("regestratio"))
-            if((this.email_confirmation.value=='')&&(this.password_confirmation.value=='')){
+            if ((this.email_confirmation.value == '') && (this.password_confirmation.value == '')) {
                 this.error.innerHTML = `fill in both email and password`
 
+            } else if (CheckLogin.checkElementPattern(this.email_confirmation)) {
+                this.error.innerHTML = `your email or Phone number is incorrect`
             }
-            else if ((localStorage.getItem("regestration") == null)) {
-                const info = {
-                    email: [this.email_confirmation.value],
-                    password: [this.password_confirmation.value]
-                };
-                localStorage.setItem("regestration", JSON.stringify(info));
-                this.styleSuccess();
-                this.backLogin();
-            } else {
+            else {
                 let storge = JSON.parse(localStorage.getItem("regestration"));
                 if ((storge.email.indexOf(this.email_confirmation.value) <= -1) && (storge.password.indexOf(this.password_confirmation.value) <= -1)) {
                     storge.email.push(this.email_confirmation.value)
                     storge.password.push(this.password_confirmation.value)
+                    storge.fname.push(this.fname.value)
                     localStorage.removeItem("regestration");
                     localStorage.setItem("regestration", JSON.stringify(storge));
                     this.styleSuccess();
@@ -96,7 +94,7 @@ export default class RegestrationAndLogin {
             localStorage.removeItem("current");
             localStorage.setItem("current", "login");
         })
-        this.backToLogin.addEventListener("click", ()=>{
+        this.backToLogin.addEventListener("click", () => {
             this.backLogin()
         })
     }

@@ -14,7 +14,7 @@ export default class FechApi{
                    <input type="button" value="${element.title}" name="lastddddddddddname" class="card_text">
                     </div>`
                 });
-                console.log(json.length)
+                // console.log(json.length)
                 // this.card.emit("helo")
                 localStorage.setItem("pagenation",json.length);
 

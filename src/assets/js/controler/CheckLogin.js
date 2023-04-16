@@ -24,9 +24,9 @@ export default class CheckLogin{
         }
       
       }
-      static checkEmail(){
+      static checkElementPattern(element){
         let storge = JSON.parse(localStorage.getItem("regestration"));
-let condition= (storge.email.includes(this.email_or_mobile.value)&&(this.ValidateEmail(this.email_or_mobile)||((!isNaN(this.email_or_mobile.value))&&(this.email_or_mobile.value.length==11))))?true:false;
+let condition= (storge.email.includes(element.value)&&(this.ValidateEmail(element)||((!isNaN(element.value))&&(element.value.length==11))))?true:false;
 // console.log("codition",condition);
 // console.log("lenth",(this.email_or_mobile.value.length==11))
         return condition;
@@ -36,7 +36,7 @@ let condition= (storge.email.includes(this.email_or_mobile.value)&&(this.Validat
         if(storge.password.includes(this.pass.value)&&(storge.email.indexOf(this.email_or_mobile.value)==storge.password.indexOf(this.pass.value))){
             localStorage.removeItem("user");
             localStorage.setItem("user",JSON.stringify( {
-                username:this.email_or_mobile.value,
+                username:storge.fname[storge.email.indexOf(this.email_or_mobile.value)],
                 id:storge.email.indexOf(this.email_or_mobile.value)
             }));
 

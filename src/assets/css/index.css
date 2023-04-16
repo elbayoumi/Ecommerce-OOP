@@ -178,8 +178,12 @@ cursor: pointer !important;
   text-align: center;
   align-items: center;
 } */
-
-
+footer{
+  text-align: center;
+}
+footer span{
+   color: green;
+}
 
 
 

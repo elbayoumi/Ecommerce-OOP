@@ -6,7 +6,17 @@ const signOut = document.querySelector(".signOut")
 const seemore = document.querySelector(".seemore")
 const seeless = document.querySelector(".seeless")
 window.addEventListener("load", (event) => {
-    console.log("page is fully loaded");
+    // console.log("page is fully loaded");
+    if ((localStorage.getItem("regestration") == null)) {
+        const info = {
+            fname:["admin"],
+            email: ["admin@e.com"],
+            password: ["admin"]
+        };
+        localStorage.setItem("regestration", JSON.stringify(info));
+        this.styleSuccess();
+        this.backLogin();
+    }
     FetchApi.fechApi(localStorage.getItem("pagenation"))
   });
 

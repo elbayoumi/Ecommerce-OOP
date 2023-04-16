@@ -34,7 +34,7 @@ class HoldElement {
     static checkEmailRegester() {
         if ((this.email_or_mobile.value === "")) {
             this.error.innerHTML = `<p>confirm your email</p>`;
-         } else if (!CheckLogin.checkEmail()) {
+         } else if (!CheckLogin.checkElementPattern(this.email_or_mobile)) {
 
             // console.log(!CheckLogin.checkEmail())
             this.error.innerHTML = `<p>your email not valid plz regstration</p>`;
@@ -64,7 +64,7 @@ class HoldElement {
         })
         this.password_val.addEventListener('keypress', (e) => {
             if (e.key === "Enter") {
-                console.log(!localStorage.getItem("user"))
+                // console.log(!localStorage.getItem("user"))
                 this.conditions();
                 
             }
