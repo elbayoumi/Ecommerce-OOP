@@ -44,6 +44,9 @@
             border-top-left-radius: 1rem;
             padding: 8px 10px;
         }
+        .user{
+            color: blue;
+        }
     </style>
 </head>
 
@@ -89,7 +92,7 @@
 
             chatInput.keypress(
                 function(e) {
-                    let message = `${username} : `+$(this).html();
+                    let message = `<span class='user'>${username}</span>  : `+$(this).html();
                     console.log(message);
                     if (e.which === 13 && !e.shiftKey) {
                         socket.emit('sendChatToServer', message)
