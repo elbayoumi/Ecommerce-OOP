@@ -85,10 +85,11 @@
             let socket = io('https://chatapi-elbayoumi.onrender.com');
             // socket.on('connection');
             let chatInput = $('#chatInput');
+            let username = JSON.parse(localStorage.getItem("user")).username||'Anonymous';
 
             chatInput.keypress(
                 function(e) {
-                    let message = $(this).html();
+                    let message = `${username} :`+$(this).html();
                     console.log(message);
                     if (e.which === 13 && !e.shiftKey) {
                         socket.emit('sendChatToServer', message)
@@ -98,9 +99,8 @@
 
                 }
             )
-           let username = JSON.parse(localStorage.getItem("user")).username||'Anonymous';
             socket.on('sendChatToClient', (messege) => {
-                $('.chat-conent ul .li').after(`<li>${username}: ${messege}</li>`);
+                $('.chat-conent ul .li').after(`<li>${messege}</li>`);
                 //   $("#chatInput").on("input",(event)=>{
                 //     $('.type').append('event')
                 //   })
