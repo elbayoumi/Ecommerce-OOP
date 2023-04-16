@@ -1,2 +1,2 @@
 # Ecommerce-OOP
-test oop project for ecommerce
+test to build oop project for ecommerce
