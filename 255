@@ -44,12 +44,10 @@
             border-top-left-radius: 1rem;
             padding: 8px 10px;
         }
-
-        .user {
+        .user{
             color: blue;
         }
-
-        .btn {
+        .btn{
             background-color: lightgray;
         }
     </style>
@@ -59,7 +57,7 @@
     <div class='container'>
         <div class="row m-5">
             <div>
-                <a href="./index.html" class="btn"> back to products</a>
+<a href="./index.html" class="btn"> back to products</a>
                 <div class=" h-25 w-100">
                     realtime chat : <span class="type "></span>
                 </div>
@@ -79,41 +77,38 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.js"
-        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"></script>
 
     <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
         integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous">
-        </script>
+    </script>
     <script>
-        $(function () {
+        $(function() {
             // let ip_address = 'http://127.0.0.1:3000';
             // let socket_port = '3000';
             // let socket = io('http://127.0.0.1:3000');
 
-            let socket = io('https://node.busaty.com', {
-                query: {
-                    token: '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' // Replace with your actual token
-                }
-            });
+            let socket = io('https://node.busaty.com');
             // socket.on('connection');
             let chatInput = $('#chatInput');
-            let username = JSON.parse(localStorage.getItem("user"))?.username || 'Anonymous';
+            let username = JSON.parse(localStorage.getItem("user"))?.username||'Anonymous';
 
             chatInput.keypress(
-                function (e) {
-                    let messages = `<span class='user'>${username}</span>  : ` + $(this).html();
-                    let message = { "latitude": "30.32186422003602", "longitude": "30.533629450203506", "type": "supervisor", "token": "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" }
-                    console.log(JSON.stringify(messages));
+                function(e) {
+                    let messages = `<span class='user'>${username}</span>  : `+$(this).html();
+                    let message={"latitude":"30.32186422003602","longitude":"30.533629450203506","type":"supervisor","token":"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","type":"supervisor"}
+                    message=JSON.stringify(message)
+                    console.log(message);
                     if (e.which === 13 && !e.shiftKey) {
-                        socket.emit('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', JSON.stringify(messages))
+                        socket.emit('costumEvent', ['wwww',message])
                         chatInput.html("")
                         return false;
                     }
 
                 }
             )
-            socket.on('r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', (messege) => {
+            socket.on('wwww', (messege) => {
                 $('.chat-conent ul .li').after(`<li>${messege}</li>`);
                 //   $("#chatInput").on("input",(event)=>{
                 //     $('.type').append('event')
@@ -138,4 +133,4 @@
     </script>
 </body>
 
-</html
+</html>
