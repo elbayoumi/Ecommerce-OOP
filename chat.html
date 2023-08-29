@@ -82,8 +82,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
-        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous">
+    <script src="./socket.js"
+         >
         </script>
     <script>
         $(function () {
@@ -99,21 +99,24 @@
             // socket.on('connection');
             let chatInput = $('#chatInput');
             let username = JSON.parse(localStorage.getItem("user"))?.username || 'Anonymous';
+// setInterval(()=>{
+//     socket.emit('driver','3','11111' )
 
+// },1000)
             chatInput.keypress(
                 function (e) {
                     let messages = `<span class='user'>${username}</span>  : ` + $(this).html();
-                    let message = { "latitude": "30.32186422003602", "longitude": "30.533629450203506", "type": "supervisor", "token": "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" }
-                    console.log(JSON.stringify(messages));
+                    let message = { "latitude": "30.32186422003602", "longitude": "30.533629450203506", "type": "supervisor" }
+                    console.log("sssss",$(this).html());
                     if (e.which === 13 && !e.shiftKey) {
-                        socket.emit('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', JSON.stringify(messages))
+                        socket.emit('driver','3',$(this).html() )
                         chatInput.html("")
                         return false;
                     }
 
                 }
             )
-            socket.on('r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', (messege) => {
+            socket.on('3', (messege) => {
                 $('.chat-conent ul .li').after(`<li>${messege}</li>`);
                 //   $("#chatInput").on("input",(event)=>{
                 //     $('.type').append('event')
