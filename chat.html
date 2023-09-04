@@ -91,7 +91,7 @@
             // let socket_port = '3000';
             // let socket = io('http://127.0.0.1:3000');
 
-            let socket = io('https://node.busaty.com', {
+            let socket = io('https://node.busaty.site', {
                 query: {
                     token: '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' // Replace with your actual token
                 }
@@ -99,24 +99,26 @@
             // socket.on('connection');
             let chatInput = $('#chatInput');
             let username = JSON.parse(localStorage.getItem("user"))?.username || 'Anonymous';
+//             let num=0;
 // setInterval(()=>{
-//     socket.emit('driver','3','11111' )
+//     num+=1;
+//     socket.emit('drivers','21',`${num*2}` )
 
-// },1000)
+// },100)
             chatInput.keypress(
                 function (e) {
                     let messages = `<span class='user'>${username}</span>  : ` + $(this).html();
                     let message = { "latitude": "30.32186422003602", "longitude": "30.533629450203506", "type": "supervisor" }
                     console.log("sssss",$(this).html());
                     if (e.which === 13 && !e.shiftKey) {
-                        socket.emit('driver','3',$(this).html() )
+                        socket.emit('drivers','21',$(this).html() )
                         chatInput.html("")
                         return false;
                     }
 
                 }
             )
-            socket.on('3', (messege) => {
+            socket.on('21', (messege) => {
                 $('.chat-conent ul .li').after(`<li>${messege}</li>`);
                 //   $("#chatInput").on("input",(event)=>{
                 //     $('.type').append('event')
