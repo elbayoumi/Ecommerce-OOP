@@ -111,14 +111,14 @@
                     let message = { "latitude": "30.32186422003602", "longitude": "30.533629450203506", "type": "supervisor" }
                     console.log("sssss",$(this).html());
                     if (e.which === 13 && !e.shiftKey) {
-                        socket.emit('drivers','21',$(this).html() )
+                        socket.emit('drivers','12',$(this).html() )
                         chatInput.html("")
                         return false;
                     }
 
                 }
             )
-            socket.on('21', (messege) => {
+            socket.on('12', (messege) => {
                 $('.chat-conent ul .li').after(`<li>${messege}</li>`);
                 //   $("#chatInput").on("input",(event)=>{
                 //     $('.type').append('event')
